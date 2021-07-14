@@ -12,6 +12,7 @@ sudo pkg install git nano sudo
 
 Por último clonar el repositorio FreeBSD a la carpeta root
 git clone https://github.com/vetealdiablo/freebsd
+
 cd
 
 Orden a seguir
