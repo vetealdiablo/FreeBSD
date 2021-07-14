@@ -1,4 +1,4 @@
-# FreeBSD 
+# FreeBSD
 
 Documentos y scripts para facilitar la vida en el infierno
 ==========================================================
