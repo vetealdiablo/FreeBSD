@@ -3,7 +3,7 @@
 Documentos y scripts para facilitar la vida en el infierno
 ==========================================================
 
-*¿Cómo usar?*
+**¿Cómo usar?**
 ========
 
 Al finalizar una instalación limpia de BSD hay que ejecutar:
@@ -15,8 +15,11 @@ git clone https://github.com/vetealdiablo/freebsd
 
 cd
 
-*Orden a seguir*
+**Orden a seguir**
 ========
+
 sh freebsd/scripts/base-ins.sh
+
 sh freebsd/scripts/post-ins.sh
+
 sh freebsd/scripts/extra-aps.sh
