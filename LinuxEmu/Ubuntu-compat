@@ -1,0 +1,56 @@
+This howto describes how to install Ubuntu 10.04 under /compat/linux. The goal is to get libreoffice working. But other stuff, like firefox will work to.
+
+You will need 700MB of free disk space for the iso image and at least 2.2GB for the /compat/linux directory. Some familiarity with a .deb based Linux will also be required.
+
+Also, i'm not sure if this will work with 8.2 or if you will need a more recent version.
+
+First, we will need an Ubuntu iso image for i368, preferably version 10.04. I tried this previously with a beta of 10.04. But with the beta apt-get kept failing on me. If you don't have an iso (the file should be named ubuntu-11.04-desktop-i386.iso), the following snippet should download it for you:
+Code:
+
+IMGLOC=11.04/ubuntu-11.04-desktop-i386.iso
+MIRROR=`curl -D /dev/stdout -s http://www.ubuntu.com/start-download | \
+    grep 'Location:' | sed 's/..$//' | awk '{print $2}'`
+echo will fetch from $MIRROR
+fetch $MIRROR$IMGLOC
+
+
+While that is downloading, make sure you have Linux binary compatibility enabled and install the sysutils/squashfs-tools port.
+
+Once you have the iso, mount it and extract the squashfs filesystem contained in it and brand the binaries:
+Code:
+
+setenv X `mdconfig -f ./ubuntu-11.04-desktop-i386.iso`
+mkdir -p /mnt/ubuntu_cd
+mount -t cd9660 /dev/$X /mnt/ubuntu_cd
+cd /compat/
+unsquashfs -d linux /mnt/ubuntu_cd/casper/filesystem.squashfs
+cd linux
+brandelf -t linux bin/* sbin/* usr/bin/* usr/sbin/* usr/local/bin/* usr/local/sbin/*
+
+
+(I also ended up deleting the /compat/linux/dev folder to silence apt-get. But i think that is not really required).
+
+Now is a good time to mount linprocfs and linsysfs. You may also want to copy your /etc/resolv.conf to /compat/linux/etc and edit /compat/linux/etc/apt/sources.list to your liking (e.g. enable "universe" and "multiverse"). To install or update packages, first do:
+
+Code:
+
+chroot linux /bin/bash
+
+
+and install packages, e.g.:
+
+Code:
+
+apt-get install gtk2-engines-oxygen libreoffice
+
+
+Since we installed something, rebrand the binaries again. Now you will have to edit /compat/linux/usr/bin/libreoffice. It is a shell script that tries to start libreoffice from /usr/lib/libreoffice/program/soffice. Prefix that with /compat/linux. It also appears to be necessary to create an entry for your user id in /compat/linux/etc/passwd. I copied mine from /etc/passwd. Now cross fingers and run:
+
+Code:
+
+/compat/linux/usr/bin/libreoffice
+
+
+And thats it! You should now have a working libreoffice!
+FUENTE:
+https://forums.freebsd.org/threads/howto-install-ubuntu-under-compat-linux.26086/

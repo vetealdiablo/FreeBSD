@@ -1,0 +1,12 @@
+Ver grupos y usuarios
+
+users and groups stored in /etc/group and /etc/passwd. To print:
+
+awk -F":" '{print $1}' /etc/passwd
+awk -F":" '{print $1}' /etc/group
+
+for more details
+
+awk -F":" '{print $0 $1 $2}' /etc/passwd
+
+

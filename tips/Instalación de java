@@ -1,0 +1,5 @@
+Instalación‌ ‌del‌ ‌java‌ ‌
+Editar‌ ‌el‌ ‌archivo‌ ‌/etc/sysctl.conf‌ ‌y‌ ‌agregar:‌ ‌
+kern.ipc.shm_allow_removed=1‌ ‌
+ ‌
+Instalar‌ ‌los‌ ‌paquetes:‌  ‌‌pkg‌ ‌install‌ ‌-y‌ ‌icedtea-web‌ ‌openjdk8-jre‌

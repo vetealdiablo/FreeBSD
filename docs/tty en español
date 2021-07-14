@@ -1,0 +1,18 @@
+First, to have UTF-8 you need a vt console, for this you need to add
+
+sudo nano /boot/loader.conf
+hw.vga.textmode=1
+
+Next, in your /etc/rc.conf you must have keymap="es"
+
+In /etc/login.conf you need to add at least this:
+sudo nano /etc/login.conf
+spanish|Spanish Users Accounts:\
+:charset=UTF-8:\
+:lang=es_ES.UTF-8:
+
+Then in terminal run: 
+sudo cap_mkdb /etc/login.conf
+
+And finally:
+sudo pw user mod root -L spanish

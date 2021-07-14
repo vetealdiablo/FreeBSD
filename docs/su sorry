@@ -1,0 +1,36 @@
+When running su, with a user that’s not in the wheel group, the following output is produced:
+
+$ su
+su: Sorry
+
+What’s worse, is since you cant switch to root, you wont be able to add the current user to the wheel group.
+
+This post will show you an easy way to fix the problem.
+
+olving the FreeBSD “su: Sorry” Problem
+
+sudo pw usermod usuario -G wheel
+
+-----------
+OTHER WAY
+
+The solution is to restart FreeBSD in single user mode and then make the change as root. This can be done by following the steps below:
+
+Step 1: Restart the server, then press 2 to boot into single user mode.
+FreeBSD Boot Single User
+
+Step 2: Make the file system writable by running the following command:
+
+mount -u -w /
+
+Step 3: Assuming your user is called sysadmin, run the following command to add the user to the wheel group:
+
+pw usermod sysadmin -G wheel
+
+Step 4: Restart the server and test the su command.
+
+$ su
+Password:
+root@uss01:/usr/home/sysadmin #
+
+As you can see from the output above, the su command now switches to the root user account when running it as the sysadmin user.

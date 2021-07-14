@@ -1,0 +1,21 @@
+Soporte‌ ‌de‌ ‌impresión:‌ ‌
+Agregar‌ ‌el‌ ‌paquete‌ ‌mediante‌ ‌
+sudo pkg install -y cups system-config-printer hplip
+ ‌
+Agregue‌ ‌al‌ ‌grupo‌ ‌cups‌ ‌los‌ ‌usuarios‌ ‌que‌ ‌hacen‌ ‌uso‌ ‌del‌ ‌servicio:‌ ‌
+sudo pw usermod root -G cups
+sudo pw usermod diablo -G cups
+ ‌
+Asegúrese‌ ‌de‌ ‌habilitar‌ ‌el‌ ‌servicio‌ ‌agregando‌ ‌las‌ ‌siguientes‌ ‌líneas‌ ‌al‌ ‌
+/etc/rc.conf:‌
+cupsd_enable="YES"
+Inicie‌ ‌el‌ ‌servicio‌ ‌de‌ ‌una‌ ‌vez‌ ‌mediante:‌
+sudo /usr/local/etc/rc.d/cupsd restart
+
+Ejecutar para añadir la impresora:
+sudo gnome-control-center
+
+Ingresar‌ ‌a‌ ‌la‌ ‌configuración‌ ‌del‌ ‌servicio‌ ‌en‌ ‌la‌ ‌URL‌ ‌‌http://localhost:631‌ ‌
+Agregue‌ ‌la‌ ‌impresora‌ ‌y‌ ‌sus‌ ‌configuraciones‌ ‌y‌ ‌con‌ ‌esto‌ ‌debería‌ ‌quedar‌ disponible‌ ‌
+ ‌
+Nota:‌  ‌Tenga‌ ‌en‌ ‌cuenta‌ ‌que‌ ‌los‌ ‌drives‌ ‌de‌ ‌cada‌ ‌impresora‌ ‌deberán‌ ‌estar‌ disponibles‌ ‌o‌ ‌ser‌ ‌cargados‌ ‌mediante‌ ‌el‌ ‌archivo‌ ‌correspondiente.‌ En‌ ‌el‌ ‌caso‌ ‌de‌ impresoras‌ ‌HP‌ ‌no‌ ‌olvide‌ ‌la‌ ‌existencia‌ ‌del‌ ‌paquete‌ ‌especial‌  ‌‌hplip‌

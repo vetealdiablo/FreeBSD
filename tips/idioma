@@ -1,0 +1,21 @@
+ ‌●Cambiar‌ ‌el‌ ‌idioma‌ ‌a‌ ‌español‌:‌ ‌
+Por‌ ‌defecto‌ ‌a‌ ‌pesar‌ ‌que‌ ‌se‌ ‌haya‌ ‌configurado‌ ‌un‌ ‌teclado‌ ‌en‌ ‌español‌ ‌o‌ ‌
+latinoamericano‌ ‌y‌ ‌zona‌ ‌horaria‌ ‌de‌ ‌un‌ ‌país‌ ‌hispanohablante,‌ ‌FreeBSD‌ ‌
+tomará‌ ‌su‌ ‌idioma‌ ‌por‌ ‌defecto‌ ‌como‌ ‌inglés.‌  ‌A‌ ‌continuación‌ ‌los‌ ‌ajustes‌ ‌que‌ ‌
+debe‌ ‌realizar‌ ‌para‌ ‌que‌ ‌todo‌ ‌su‌ ‌sistema‌ ‌comprenda‌ ‌que‌ ‌debe‌ ‌presentar‌ ‌la‌ ‌
+información,‌ ‌menúes,‌ ‌etc‌ ‌en‌ ‌español‌ ‌(siempre‌ ‌que‌ ‌la‌ ‌aplicación‌ ‌lo‌ ‌soporte):‌ ‌
+●Editar‌ ‌el‌ ‌archivo‌‌ ‌.login_conf‌‌ ‌del‌ ‌usuario‌ ‌así:‌ ‌
+    ‌me:\‌ ‌
+         ‌:charset=UTF-8:\‌ ‌
+         ‌:lang=es_ES.UTF-8:\‌ ‌
+         ‌:tc=default:‌ ‌
+●Editar‌ ‌el‌ ‌archivo‌‌ ‌.profile‌‌ ‌del‌ ‌usuario‌ ‌así‌:‌ ‌
+LANG=es_ES.UTF-8;‌ ‌export‌ ‌LANG‌ ‌
+MM_CHARSET=UTF-8;‌ ‌export‌ ‌MM_CHARSET‌ ‌
+ ‌
+(Opcional)‌ ‌Si‌ ‌desea‌ ‌ampliar‌ ‌el‌ ‌soporte‌ ‌Unicode‌ ‌para‌ ‌
+terminales‌ ‌agregue:‌ ‌
+LC_CTYPE=es_ES.UTF-8‌ ‌
+export‌ ‌LC_CTYPE‌ ‌
+ ‌
+

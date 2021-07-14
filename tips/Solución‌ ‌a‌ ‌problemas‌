@@ -1,0 +1,18 @@
+Solución‌ ‌a‌ ‌problemas‌ ‌y‌ ‌tareas‌ ‌comunes‌ ‌durante‌ ‌procesos‌ ‌de‌ ‌instalación‌
+
+●Reseteando‌ ‌la‌ ‌contraseña‌ ‌del‌ ‌root‌ ‌en‌ ‌caso‌ ‌de‌ ‌olvidarla:‌ ‌
+●Apague‌ ‌el‌ ‌sistema‌ ‌
+●Presione‌ ‌ESC‌ ‌cuando‌ ‌el‌ ‌sistema‌ ‌inicie‌ ‌
+●Seleccione‌ ‌“Single‌ ‌User‌ ‌Mode”‌ ‌
+●Seleccione‌ ‌el‌ ‌shell‌ ‌por‌ ‌defecto‌ ‌como‌ ‌(/bin/sh)‌ ‌
+●Cuando‌ ‌la‌ ‌máquina‌ ‌haya‌ ‌iniciado‌ ‌y‌ ‌tenga‌ ‌un‌ ‌prompt‌ ‌ingrese:‌ ‌
+mount‌ ‌-u‌ ‌/‌ ‌
+mount‌ ‌-a‌ ‌
+●Ingrese‌ ‌el‌ ‌comando‌  ‌‌passwd‌‌ ‌para‌ ‌cambiar‌ ‌el‌ ‌password‌ ‌
+●Reinicie‌ ‌la‌ ‌máquina‌ ‌mediante‌ ‌‌reboot‌‌ ‌y‌ ‌pruebe‌ ‌el‌ ‌acceso‌ ‌
+ ‌
+Lo‌ ‌anterior‌ ‌funciona‌ ‌en‌ ‌máquinas‌ ‌en‌ ‌una‌ ‌ubicación‌ ‌segura‌ ‌(o‌ ‌física‌ ‌accesible).‌ ‌
+Cualquiera‌ ‌podría‌ ‌tener‌ ‌acceso‌ ‌root‌ ‌de‌ ‌esta‌ ‌manera.‌ ‌
+ ‌
+Para‌ ‌aumentar‌ ‌la‌ ‌seguridad‌ ‌edite‌ ‌el‌ ‌archivo‌‌ ‌/etc/ttys‌‌ ‌y‌ ‌marque‌ ‌la‌ ‌consola‌ como‌ ‌insegura.‌  ‌Después‌ ‌de‌ ‌reiniciar‌ ‌(o‌ ‌hacer‌ ‌un‌ ‌HUP‌ ‌init)‌ ‌nadie‌ ‌podrá‌ ‌entrar‌ en‌ ‌modo‌ ‌single-user‌ ‌sin‌ ‌antes‌ ‌ingresar‌ ‌la‌ ‌clave‌ ‌actual‌ del‌ ‌root.‌ ‌‌CUIDADO‌:‌ ‌
+Esto‌ ‌aumentará‌ ‌la‌ ‌seguridad‌ ‌para‌ ‌máquinas‌ ‌con‌ ‌acceso‌ ‌físico‌ ‌pero‌ ‌no‌ ‌podrá‌ restablecer‌ ‌la‌ ‌clave‌ ‌de‌ ‌root‌ ‌si‌ ‌la‌ ‌olvida.‌

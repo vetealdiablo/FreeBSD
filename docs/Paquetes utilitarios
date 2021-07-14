@@ -1,0 +1,5 @@
+PAQUETES UTILES
+sudo pkg install gcc unzip unrar zip bzip2 p7zip screenfetch fish es-libreoffice wget zsh git gimp audacity vlc transmission-gtk i386-wine
+
+bspwm
+sudo pkg install bspwm sxhkd polybar urxvt-unicode xsetroot xterm feh rofi font-awesome lxappearance

@@ -1,0 +1,12 @@
+UPDATE: I usually get the list of all .nanorc files on my system and write them to my ~/.nanorc using the following one liner set of commands. It should work on both bash and csh. Moreover, it disables text-wrapping which you can enable by cutting it off from the begging of it. Just be warned it generates a new ~/.nanorc file for the current user and wipes out all of your old settings.
+
+
+printf ~/.nanorc \
+    && find /usr/local/share/nano/ -iname '*.nanorc' \
+    | xargs printf 'include "%s"\n' >> ~/.nanorc && cat ~/.nanorc
+    
+    
+NO WRAP:
+printf 'set nowrap\n\n' > ~/.nanorc \
+    && find /usr/local/share/nano/ -iname '*.nanorc' \
+    | xargs printf 'include "%s"\n' >> ~/.nanorc && cat ~/.nanorc

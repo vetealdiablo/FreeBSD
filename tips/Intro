@@ -1,0 +1,41 @@
+Recuerde‌ ‌ajustar‌ ‌sus‌ ‌configuraciones‌ ‌básicas‌ ‌de‌ ‌red‌ ‌antes‌ ‌de‌ ‌comenzar‌ ‌a‌ ‌instalar‌ paquetes‌ ‌en‌ ‌caso‌ ‌que‌ ‌no‌ ‌lo‌ ‌haya‌ ‌hecho‌ ‌en‌ ‌tiempo‌ ‌de‌ ‌instalación:‌ ‌
+https://docs.freebsd.org/doc/5.3-RELEASE/usr/share/doc/es/books/handbook/ins‌tall-post.html‌ ‌
+https://www.freebsd.org/doc/handbook/config-network-setup.html‌ ‌ ‌
+https://www.freebsd.org/doc/handbook/advanced-networking.html‌ ‌ ‌
+
+●En‌ ‌cualquier‌ ‌momento‌ ‌posterior‌ ‌a‌ ‌la‌ ‌instalación‌ ‌puede‌ ‌ejecutar‌ ‌el‌ ‌
+comando‌ ‌
+bsdconfig‌ 
+para‌ ‌abrir‌ ‌el‌ ‌panel‌ ‌de‌ ‌configuración‌ ‌del‌ ‌sistema.‌ ‌
+ ‌
+●Posterior‌ ‌a‌ ‌la‌ ‌instalación‌ ‌actualizar‌ ‌las‌ ‌fuentes‌ ‌de‌ ‌paquetes‌ ‌mediante‌ ‌
+pkg‌ ‌update‌ ‌
+pkg‌ ‌upgrade‌ ‌
+ ‌
+●Instalar‌ ‌los‌ ‌últimos‌ ‌parches‌ ‌binarios‌ ‌de‌ ‌actualización‌ ‌
+freebsd-update‌ ‌fetch‌ ‌
+freebsd-update‌ ‌install‌ ‌
+ ‌
+●Permitir‌ ‌ejecución‌ ‌de‌ ‌comandos‌ ‌como‌ ‌root‌ ‌desde‌ ‌otro‌ ‌usuario‌ ‌(doas‌ ‌-‌ ‌
+sudo):‌ ‌
+Agregar‌ ‌el‌ ‌paquete‌ ‌doas:‌  ‌‌pkg‌ ‌install‌ ‌-y‌ ‌doas‌ ‌
+Editar‌ ‌o‌ ‌crear‌ ‌el‌ ‌archivo‌  ‌/etc/doas.conf:‌ ‌
+permit‌ ‌nopass‌ ‌NombreUsuarioDeseado‌
+
+FreeBSD‌ ‌como‌ ‌Escritorio‌ ‌
+Versión‌ ‌19.11.25‌ ‌
+La‌ ‌ruta‌ ‌por‌ ‌defecto‌ ‌del‌ ‌archivo‌ ‌de‌ ‌configuración‌ ‌(/etc/doas.conf)‌ ‌podría‌ cambiar‌ ‌a‌ ‌algo‌ ‌como‌ ‌‌/usr/local/etc/doas.conf‌‌ ‌por‌ ‌ejemplo.‌  ‌En‌ ‌la‌ ‌ejecución‌ de‌ ‌algún‌ ‌comando‌ ‌‌doas‌‌ ‌puede‌ ‌que‌ ‌le‌ ‌solicite‌ ‌reubicar‌ ‌la‌ ‌configuración‌ ‌en‌ el‌ ‌archivo‌ ‌por‌ ‌el‌ ‌indicado.‌ ‌
+ ‌
+En‌ ‌caso‌ ‌que‌ ‌desee‌ ‌que‌ ‌el‌ ‌usuario‌ ‌pueda‌ ‌montar‌ ‌dispositivos‌ ‌USB‌ ‌
+agregar:‌ ‌
+permit‌ ‌nopass‌ ‌NombreUsuarioDeseado‌ ‌as‌ ‌root‌ ‌cmd‌ ‌mount‌ ‌
+permit‌ ‌nopass‌ ‌NombreUsuarioDeseado‌ ‌as‌ ‌root‌ ‌cmd‌ ‌umount‌ ‌
+Con‌ ‌eso‌ ‌podrá‌ ‌montar‌ ‌dispositivos‌ ‌ej:‌‌ ‌doas‌ ‌mount‌ ‌/dev/sd1i‌ ‌
+/mnt/usb‌ ‌
+ ‌
+Para‌ ‌quienes‌ ‌prefieren‌ ‌utilizar‌ ‌‌sudo‌:‌ ‌
+Agregar‌ ‌el‌ ‌paquete‌ ‌sudo:‌  ‌‌pkg‌ ‌install‌ ‌-y‌ ‌sudo‌ ‌
+Editar‌ ‌o‌ ‌crear‌ ‌el‌ ‌archivo‌ ‌/usr/local/etc/sudoers:‌ ‌
+NombreUsuarioDeseado‌   ‌ALL=(ALL)‌ ‌ALL‌
+
+
