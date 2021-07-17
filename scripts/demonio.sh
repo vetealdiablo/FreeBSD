@@ -40,7 +40,7 @@ sudo cp freebsd/configs/sddm.conf /usr/local/etc/
 #For AC powered devices (PC, etc..)
 sudo gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout '0'
 #For Battery powered devices (Laptops, Notebooks etc..)
-sudo gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout '0
+sudo gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout '0'
 # Cambiar el nombre de usuario por el actual.
 sudo chsh -s /usr/local/bin/zsh diablo
 sudo reboot
