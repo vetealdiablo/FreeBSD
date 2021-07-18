@@ -23,6 +23,10 @@ cd
 
 sh freebsd/scripts/base-ins.sh
 
+#Para una instalación completa:#
+
+sh freebsd/scripts/demonio.sh
+
 sh freebsd/scripts/post-ins.sh
 
 sh freebsd/scripts/extra-aps.sh
