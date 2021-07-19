@@ -4,7 +4,7 @@ Cuando montamos ntfs mediante ntfs-3g siempre antes de cerrar la sesión o reini
 
 **COMANDO:**
 
-sudo umount /mnt/ntfs
+`<sudo umount /mnt/ntfs>`
 
 **Para forzar:**
 
