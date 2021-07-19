@@ -1,6 +1,6 @@
 **Discos NTFS**
 
-Cuando montamos ntfs mediante ntfs-3g siempre antes de cerrar la sesión o reiniciar/apagar el equipo hay que desmontar el disco ya que de lo contrario, ningún cambio que hemos realizado en el (copiar, mover, etc) no se guardarán.
+Cuando montamos ntfs mediante el comando de fusefs (ntfs-3g) siempre antes de cerrar la sesión o reiniciar/apagar el equipo hay que desmontar el disco ya que de lo contrario, si copiamos o movimos archivos los cambios no se guardarán y podríamos perder información importante.
 
 **Comando:**
 
