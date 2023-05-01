@@ -1,0 +1,15 @@
+Árbol de particiones manual:
+
++BSD
+++ freebsd-ufs /
+++ freebsd-swap none
+
+Después de instalar FREEBSD junto a Windows, con particionado manual, antes de salir de la instalación ejecutar:
+
+gpart show para ver el disco en donde se instalado, por ej: 
+gpart show ada0
+
+Y ejecutar:
+boot0cfg -B ada0
+
+Eso instalar el bootloader en el disco 0 y descubrirá los discos de Windows.
