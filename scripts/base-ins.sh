@@ -26,6 +26,7 @@ sudo nvidia-xconfig
 cd
 git clone https://github.com/vetealdiablo/freebsd/
 sudo cp freebsd/configs/idioma/00-keyboard.conf /usr/local/etc/X11/xorg.conf.d/
+sudo cp freebsd/configs/idioma/gdm/locale.conf /usr/local/etc/gdm/
 cat freebsd/make/Makefile | xargs -I {} pkg install  -y {}
 echo -e "\e[91m\e[1m¡Todo hecho!\e[0m"
 
