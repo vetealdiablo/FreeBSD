@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo pkg update
-sudo pkg install -y nano curl wget sudo bash bash-completion zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 
+sudo pkg install -y nano ninja cmake curl wget sudo bash bash-completion zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 
 sudo kldload fusefs
 sudo echo 'diablo ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 sudo echo '%wheel ALL=(ALL) ALL' >> /usr/local/etc/sudoers
@@ -19,7 +19,7 @@ sudo nvidia-xconfig
 sudo pkg install -y bspwm sxhkd dmenu rofi lxappearance pcmanfm ranger ueberzug xterm imagemagick feh picom rxvt-unicode zathura zathura-pdf-poppler
 sudo pkg install -y xrandr xkill xinit xsetroot wmctrl 
 sudo pkg install -y roboto-fonts-ttf droid-fonts-ttf bitstream-vera dejavu terminus-font font-awesome
-sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsautils 
+sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsautils cava
 cd
 git clone https://github.com/vetealdiablo/freebsd/
 sudo cp freebsd/configs/idioma/00-keyboard.conf /usr/local/etc/X11/xorg.conf.d/
