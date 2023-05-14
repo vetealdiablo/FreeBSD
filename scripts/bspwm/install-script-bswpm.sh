@@ -17,7 +17,7 @@ sudo echo 'cupsd_enable="YES"' >> /etc/rc.conf
 # PAQUETES
 sudo pkg install -y xorg xrandr xkill xinit xsetroot nvidia-driver nvidia-settings nvidia-xconfig dbus wmctrl font-awesome sourcecodepro-ttf bitstream-vera dejavu nerd-fonts firefox 
 sudo pkg install -y bspwm sxhkd dmenu polybar rofi lxappearance pcmanfm ranger py-ueberzug feh picom rxvt-unicode zathura zathura-pdf-poppler
-sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsa-utils cava
+sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsa-utils
 sudo nvidia-xconfig
 cd
 git clone https://github.com/vetealdiablo/freebsd/
