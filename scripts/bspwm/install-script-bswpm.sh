@@ -10,16 +10,14 @@ sudo echo '#kern.vty=sc' >> /boot/loader.conf
 sudo echo 'hw.vga.textmode=1' >> /boot/loader.conf
 sudo echo 'dbus_enable="YES"' >> /etc/rc.conf
 sudo echo 'gdm_enable="NO"' >> /etc/rc.conf
-sudo echo 'sddm_enable="YES"' >> /etc/rc.conf
+# sudo echo 'sddm_enable="YES"' >> /etc/rc.conf
 sudo echo 'gnome_enable="NO"' >> /etc/rc.conf
 sudo echo 'kld_list="fusefs"' >> /etc/rc.conf
 sudo echo 'cupsd_enable="YES"' >> /etc/rc.conf
-sudo pkg install -y xorg nvidia-driver nvidia-settings nvidia-xconfig dbus font-awesome sourcecodepro-ttf firefox
+sudo pkg install -y xorg xrandr xkill xinit xsetroot wmctrl nvidia-driver nvidia-settings nvidia-xconfig dbus font-awesome sourcecodepro-ttf bitstream-vera dejavu nerd-fonts firefox 
+sudo pkg install -y bspwm sxhkd dmenu polybar rofi lxappearance pcmanfm ranger py-ueberzug feh picom rxvt-unicode zathura zathura-pdf-poppler
+sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsa-utils cava
 sudo nvidia-xconfig
-sudo pkg install -y bspwm sxhkd dmenu rofi lxappearance pcmanfm ranger ueberzug xterm imagemagick feh picom rxvt-unicode zathura zathura-pdf-poppler
-sudo pkg install -y xrandr xkill xinit xsetroot wmctrl 
-sudo pkg install -y roboto-fonts-ttf droid-fonts-ttf bitstream-vera dejavu terminus-font font-awesome
-sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsautils cava
 cd
 git clone https://github.com/vetealdiablo/freebsd/
 sudo cp freebsd/configs/idioma/00-keyboard.conf /usr/local/etc/X11/xorg.conf.d/
@@ -29,6 +27,6 @@ sudo mv /etc/login.conf /etc/login.conf.backup
 sudo cp freebsd/configs/idioma/login.conf /etc/
 sudo cap_mkdb /etc/login.conf
 echo "cap_mkdb /etc/login.conf ===> ¡Listo!"
-sudo cp freebsd/configs/sddm.conf /usr/local/etc/
+# sudo cp freebsd/configs/sddm.conf /usr/local/etc/
 echo -e "\e[91m\e[1m¡Todo hecho!\e[0m"
 
