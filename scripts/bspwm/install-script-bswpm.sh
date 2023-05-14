@@ -14,7 +14,8 @@ sudo echo 'gdm_enable="NO"' >> /etc/rc.conf
 sudo echo 'gnome_enable="NO"' >> /etc/rc.conf
 sudo echo 'kld_list="fusefs"' >> /etc/rc.conf
 sudo echo 'cupsd_enable="YES"' >> /etc/rc.conf
-sudo pkg install -y xorg xrandr xkill xinit xsetroot wmctrl nvidia-driver nvidia-settings nvidia-xconfig dbus font-awesome sourcecodepro-ttf bitstream-vera dejavu nerd-fonts firefox 
+# PAQUETES
+sudo pkg install -y xorg xrandr xkill xinit xsetroot nvidia-driver nvidia-settings nvidia-xconfig dbus wmctrl font-awesome sourcecodepro-ttf bitstream-vera dejavu nerd-fonts firefox 
 sudo pkg install -y bspwm sxhkd dmenu polybar rofi lxappearance pcmanfm ranger py-ueberzug feh picom rxvt-unicode zathura zathura-pdf-poppler
 sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsa-utils cava
 sudo nvidia-xconfig
