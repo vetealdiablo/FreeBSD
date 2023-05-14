@@ -29,5 +29,6 @@ sudo cp freebsd/configs/idioma/login.conf /etc/
 sudo cap_mkdb /etc/login.conf
 echo "cap_mkdb /etc/login.conf ===> ¡Listo!"
 # sudo cp freebsd/configs/sddm.conf /usr/local/etc/
+sudo chsh -s /usr/local/bin/bash diablo
 echo -e "\e[91m\e[1m¡Todo hecho!\e[0m"
 
