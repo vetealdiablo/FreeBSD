@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo pkg update
-sudo pkg install -y nano ninja cmake curl wget sudo bash bash-completion zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 
+sudo pkg install -y nano vim ninja cmake curl wget sudo bash bash-completion zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 
 sudo kldload fusefs
 sudo echo 'diablo ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 sudo echo '%wheel ALL=(ALL) ALL' >> /usr/local/etc/sudoers
@@ -15,8 +15,8 @@ sudo echo 'gnome_enable="NO"' >> /etc/rc.conf
 sudo echo 'kld_list="fusefs"' >> /etc/rc.conf
 sudo echo 'cupsd_enable="YES"' >> /etc/rc.conf
 # PAQUETES
-sudo pkg install -y xorg xrandr xkill xinit xsetroot nvidia-driver nvidia-settings nvidia-xconfig dbus wmctrl font-awesome sourcecodepro-ttf bitstream-vera dejavu nerd-fonts firefox 
-sudo pkg install -y bspwm sxhkd dmenu polybar rofi lxappearance pcmanfm py39-ranger py39-ueberzug feh picom rxvt-unicode zathura zathura-pdf-poppler ncurses terminfo-db
+sudo pkg install -y xorg xrandr xkill xinit xsetroot nvidia-driver nvidia-settings nvidia-xconfig dbus font-awesome sourcecodepro-ttf 
+sudo pkg install -y bspwm sxhkd polybar rofi lxappearance pcmanfm py39-ranger py39-ueberzug chromium feh picom rxvt-unicode zathura zathura-pdf-poppler
 sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsa-utils
 sudo nvidia-xconfig
 cd
