@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo pkg update
-sudo pkg install -y nano curl wget sudo bash bash-completion zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 
+sudo pkg install -y nano curl wget sudo vim bash bash-completion zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 
 sudo kldload fusefs
 sudo echo 'diablo ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 sudo echo '%wheel ALL=(ALL) ALL' >> /usr/local/etc/sudoers
