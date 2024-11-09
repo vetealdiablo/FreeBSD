@@ -38,6 +38,7 @@ echo '%wheel ALL=(ALL) ALL' | sudo tee -a /usr/local/etc/sudoers > /dev/null
 # Habilitar servicios al arranque (módulos)
 echo 'kld_list="nvidia-modeset"' | sudo tee -a /etc/rc.conf > /dev/null
 echo 'kld_list="fusefs"' | sudo tee -a /etc/rc.conf > /dev/null
+echo 'sddm_enable="YES"' | sudo tee -a /etc/rc.conf > /dev/null
 
 # ==========================================
 # Sección 3: Configuración de loader.conf
