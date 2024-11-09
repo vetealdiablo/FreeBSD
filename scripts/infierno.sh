@@ -19,6 +19,8 @@ pkg install -y bspwm sxhkd polybar rofi lxappearance pcmanfm py39-ranger py39-ue
 # Paquetes de audio (PulseAudio)
 # pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsa-utils
 
+nvidia-xconfig
+
 # ==========================================
 # Sección 2: Comandos de Configuración del Sistema
 # ==========================================
