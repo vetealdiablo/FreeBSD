@@ -27,5 +27,8 @@ polybar &
 # Establecer el cursor por defecto
 xsetroot -cursor_name left_ptr &
 
+# Iniciar sxhdk
+sxhdk &
+
 # Iniciar bspwm como gestor de ventanas
 exec bspwm
