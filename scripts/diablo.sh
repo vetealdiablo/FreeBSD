@@ -17,7 +17,7 @@ sudo pkg install -y xorg nvidia-driver nvidia-settings nvidia-xconfig dbus font-
 sudo nvidia-xconfig
 sudo pkg install -y gnome chrome-gnome-shell
 cd
-git clone https://github.com/vetealdiablo/freebsd/
+git clone https://github.com/kio-grnd/freebsd/
 sudo cp freebsd/configs/idioma/00-keyboard.conf /usr/local/etc/X11/xorg.conf.d/
 sudo cp freebsd/configs/idioma/gdm/locale.conf /usr/local/etc/gdm/
 echo -e "\e[91m\e[1m¡Todo hecho!\e[0m"
