@@ -20,7 +20,7 @@ sudo pkg install -y bspwm sxhkd polybar rofi lxappearance pcmanfm py39-ranger py
 sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsa-utils
 sudo nvidia-xconfig
 cd
-git clone https://github.com/vetealdiablo/freebsd/
+git clone https://github.com/kio-grnd/freebsd/
 sudo cp freebsd/configs/idioma/00-keyboard.conf /usr/local/etc/X11/xorg.conf.d/
 sudo cp freebsd/configs/idioma/gdm/locale.conf /usr/local/etc/gdm/
 sudo cd
