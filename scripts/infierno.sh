@@ -17,34 +17,24 @@ echo '%wheel ALL=(ALL) ALL' | sudo tee -a /usr/local/etc/sudoers > /dev/null
 echo 'proc /proc procfs rw 0 0' | sudo tee -a /etc/fstab > /dev/null
 
 # Configuración del arranque y módulos
-# echo 'nvidia-modeset_load="YES"' | sudo tee -a /boot/loader.conf > /dev/null
-echo '#kern.vty=sc' | sudo tee -a /boot/loader.conf > /dev/null
-echo 'hw.vga.textmode=1' | sudo tee -a /boot/loader.conf > /dev/null
+
 
 # Habilitar servicios al arranque
-echo 'dbus_enable="YES"' | sudo tee -a /etc/rc.conf > /dev/null
-echo 'hald_enable="YES"' | sudo tee -a /etc/rc.conf > /dev/null
-echo 'linux_enable="YES"' | sudo tee -a /etc/rc.conf > /dev/null
-echo 'cupsd_enable="YES"' | sudo tee -a /etc/rc.conf > /dev/null
 echo 'kld_list="nvidia-modeset"' | sudo tee -a /etc/rc.conf > /dev/null
-echo 'gdm_enable="NO"' | sudo tee -a /etc/rc.conf > /dev/null
-# Para usar SDDM en lugar de GDM, descomenta la siguiente línea
-# echo 'sddm_enable="YES"' | sudo tee -a /etc/rc.conf > /dev/null
-echo 'gnome_enable="NO"' | sudo tee -a /etc/rc.conf > /dev/null
 echo 'kld_list="fusefs"' | sudo tee -a /etc/rc.conf > /dev/null
-echo 'cupsd_enable="YES"' | sudo tee -a /etc/rc.conf > /dev/null
+
 
 # Paquetes para entorno gráfico y utilidades
-sudo pkg install -y xorg xrandr xkill xinit xsetroot nvidia-driver nvidia-settings nvidia-xconfig dbus font-awesome sourcecodepro-ttf
+pkg install -y xorg xrandr xkill xinit xsetroot nvidia-driver nvidia-settings nvidia-xconfig dbus font-awesome sourcecodepro-ttf
 
 # Instalar entorno minimalista con BSPWM, Polybar, Rofi, etc.
-sudo pkg install -y bspwm sxhkd polybar rofi lxappearance pcmanfm py39-ranger py39-ueberzug feh picom rxvt-unicode zathura zathura-pdf-poppler
+pkg install -y bspwm sxhkd polybar rofi lxappearance pcmanfm py39-ranger py39-ueberzug feh picom rxvt-unicode zathura zathura-pdf-poppler
 
 # Paquetes de audio (PulseAudio)
-sudo pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsa-utils
+pkg install -y pulseaudio pulseaudio-alsa pavucontrol alsa-utils
 
 # Configuración de NVIDIA Xorg
-sudo nvidia-xconfig
+# nvidia-xconfig
 
 # Finalizar instalación
 echo "Instalación completa. ¡Reinicia el sistema para aplicar los cambios!"
