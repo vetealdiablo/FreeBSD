@@ -38,6 +38,14 @@ echo 'kld_list="nvidia-modeset"' | sudo tee -a /etc/rc.conf > /dev/null
 echo 'kld_list="fusefs"' | sudo tee -a /etc/rc.conf > /dev/null
 
 # ==========================================
+# Sección 3: Configuración de loader.conf
+# ==========================================
+
+# Agregar configuraciones al archivo /boot/loader.conf
+echo '#kern.vty=sc' | sudo tee -a /boot/loader.conf > /dev/null
+echo 'hw.vga.textmode=1' | sudo tee -a /boot/loader.conf > /dev/null
+
+# ==========================================
 # Mensaje Final
 # ==========================================
 echo "Instalación completa. ¡Reinicia el sistema para aplicar los cambios!"
