@@ -7,23 +7,14 @@
 # Actualizar los repositorios de paquetes
 pkg update -y
 
-# Instalar herramientas básicas, utilidades y controladores de NVIDIA
-pkg install -y \
-  nano git bash sudo htop vim ninja cmake curl wget \
-  bash-completion zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions \
-  fusefs-ntfs fusefs-ext2 \
-  xorg xrandr xkill xinit xsetroot \
-  nvidia-driver-470 nvidia-settings nvidia-xconfig \
-  font-awesome sourcecodepro-ttf \
-  bspwm sxhkd polybar rofi lxappearance \
-  py-ranger py-ueberzug feh picom rxvt-unicode \
-  zathura zathura-pdf-poppler
+pkg install -y nano git bash sudo htop vim ninja cmake curl wget bash-completion zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 xorg xrandr xkill xinit xsetroot nvidia-driver-470 nvidia-settings nvidia-xconfig font-awesome sourcecodepro-ttf bspwm sxhkd polybar rofi lxappearance py-ranger py-ueberzug feh picom rxvt-unicode zathura zathura-pdf-poppler
+
 
 # Configurar el driver de NVIDIA
 nvidia-xconfig
 
-# Mensaje de éxito
-echo "Instalación completada y configuración de NVIDIA aplicada."
+# Mensaje de éxito en rojo claro
+echo -e "\033[1;31mInstalación completada y configuración de NVIDIA aplicada.\033[0m"
 
 
 # ==========================================
@@ -72,11 +63,11 @@ echo '    Option "XkbVariant" "nodeadkeys"' | sudo tee -a /usr/local/etc/X11/xor
 echo '    Option "XkbOptions" "grp:alt_shift_toggle"' | sudo tee -a /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf > /dev/null
 echo 'EndSection' | sudo tee -a /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf > /dev/null
 
-# Confirmación de creación
-echo "Archivo de configuración creado correctamente: /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf"
+# Confirmación de creación en rojo claro
+echo -e "\033[1;31mArchivo de configuración creado correctamente: /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf\033[0m"
 
 
 # ==========================================
 # Mensaje Final
 # ==========================================
-echo "Instalación completa. ¡Reinicia el sistema para aplicar los cambios!"
+echo -e "\033[1;31mInstalación completa. ¡Reinicia el sistema para aplicar los cambios!\033[0m"
