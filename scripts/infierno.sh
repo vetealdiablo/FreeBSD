@@ -24,7 +24,7 @@ pkg install -y bspwm sxhkd polybar rofi lxappearance pcmanfm py39-ranger py39-ue
 # ==========================================
 
 # Cargar el módulo FUSE para sistemas de archivos
-sudo kldload fusefs
+kldload fusefs
 
 # Configuración del sudoers para el usuario 'diablo' y el grupo 'wheel'
 echo 'diablo ALL=(ALL) ALL' | sudo tee -a /usr/local/etc/sudoers > /dev/null
