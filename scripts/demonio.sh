@@ -8,6 +8,7 @@ sudo mount /dev/ada3p1 /mnt/infierno
 sudo chmod -R 777 /mnt/infierno
 sudo ntfs-3g /dev/ada2s1 /mnt/ntfs
 sudo echo 'diablo ALL=(ALL) ALL' >> /usr/local/etc/sudoers
+sudo echo 'demonio ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 sudo echo 'cesc ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 sudo echo 'spity ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 sudo echo '%wheel ALL=(ALL) ALL' >> /usr/local/etc/sudoers
