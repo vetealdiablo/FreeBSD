@@ -2,11 +2,6 @@
 sudo pkg update
 sudo pkg install -y nano git curl wget sudo bash bash-completion zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 
 sudo kldload fusefs
-sudo mkdir /mnt/ntfs
-sudo mkdir /mnt/infierno
-sudo mount /dev/ada3p1 /mnt/infierno
-sudo chmod -R 777 /mnt/infierno
-sudo ntfs-3g /dev/ada2s1 /mnt/ntfs
 sudo echo 'diablo ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 sudo echo 'demonio ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 sudo echo 'cesc ALL=(ALL) ALL' >> /usr/local/etc/sudoers
@@ -26,7 +21,7 @@ sudo pkg install -y xorg nvidia-driver nvidia-settings nvidia-xconfig dbus font-
 sudo nvidia-xconfig
 echo "\e[91m\e[1m2da etapa de instalación\e[0m"
 cd
-git clone https://github.com/vetealdiablo/freebsd/
+git clone https://github.com/kio-grnd/freebsd/
 sudo cp freebsd/configs/idioma/00-keyboard.conf /usr/local/etc/X11/xorg.conf.d/
 cat freebsd/make/Makefile | xargs -I {} pkg install  -y {}
 cd
