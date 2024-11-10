@@ -5,7 +5,7 @@
 # ==========================================
 
 # Actualizar los repositorios de paquetes
-pkg update -y || { echo "Error al actualizar los repositorios"; exit 1; }
+# pkg update -y || { echo "Error al actualizar los repositorios"; exit 1; }
 
 # Instalar paquetes necesarios
 pkg install -y nano git bash sudo htop vim ninja cmake curl wget bash-completion zsh zsh-completions \
@@ -17,7 +17,7 @@ rofi lxappearance feh picom rxvt-unicode py311-ueberzug py311-ranger zathura unz
 nvidia-xconfig
 
 # Mensaje de éxito en rojo claro
-echo "\033[1;31mInstalación completada y configuración de NVIDIA aplicada.\033[0m"
+echo "Instalación completada y configuración de NVIDIA aplicada."
 
 
 # ==========================================
@@ -65,10 +65,10 @@ EndSection
 EOF
 
 # Confirmación de creación en rojo claro
-echo "\033[1;31mArchivo de configuración creado correctamente: /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf\033[0m"
+echo "Archivo de configuración creado correctamente: /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf"
 
 
 # ==========================================
 # Mensaje Final
 # ==========================================
-echo "\033[1;31mInstalación completa. ¡Reinicia el sistema para aplicar los cambios!\033[0m"
+echo "Instalación completa. ¡Reinicia el sistema para aplicar los cambios!"
