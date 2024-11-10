@@ -1,6 +1,6 @@
 ---
 
-# 🚀 FreeBSD: Documentos y Scripts para Facilitar la Vida en el Infierno 🔥
+# 😈 FreeBSD: Documentos y Scripts para Facilitar la Vida en el Infierno 🔥
 
 Bienvenidos a una recopilación de documentos y scripts para hacer que tu experiencia con **FreeBSD** sea más ágil y menos dolorosa. Si eres un guerrero del sistema operativo BSD, este repositorio está pensado para simplificar tareas repetitivas, configurar tu entorno y llevar tu FreeBSD al siguiente nivel.
 
