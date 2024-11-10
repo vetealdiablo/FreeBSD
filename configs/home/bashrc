@@ -143,10 +143,7 @@ alias 'pkg'='sudo pkg install'
 
 # Extras
 alias 'fuse'='sudo kldload fusefs'
-alias 'mn'='sudo mount -t ext2fs /dev/ada3s1 /mnt/ext4'
-alias 'ntfs'='sudo ntfs-3g /dev/ada2s1 /mnt/ntfs'
 alias 'apagar'='sudo shutdown now'
-alias 'pv'='xdg-open https://www.primevideo.com'
 alias 'fx'='firefox & exit'
 
 #nVIDIA fix-tearing

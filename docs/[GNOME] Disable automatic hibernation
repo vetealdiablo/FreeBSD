@@ -1,9 +1,0 @@
-I have seen that the GNOME desktop try's to go into hibernation after a small AFK time.
-The problem is that i comeback with a frozen system and i dont need hibernation either.
-
-Unfortunately this is can not be disabled in the gnome-control-center.
-
-I have used gsettings directly instead to disable hibernation in GNOME.
-
-For AC powered devices (PC, etc..): gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout '0'
-For Battery powered devices (Laptops, Notebooks etc..): gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout '0'

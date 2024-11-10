@@ -1,0 +1,66 @@
+-- Notas:
+$ significa ejecutar como usuario normal
+# significa ejecutar como root
+
+1. Listar y encontrar el nombre de tu disco externo:
+$ grep -i disk /var/run/dmesg.boot
+O
+# gpart show
+
+-- Salida esperada:
+Código:
+
+.
+.
+ada0 ...
+ada1 ...
+da0 ...
+ada3 GPT (512G)
+.
+.
+
+-- Atención: supongamos que el disco de **512 GB** es el correcto => **ada3** es el nombre, es decir, **/dev/ada3**.
+
+2. Crear un esquema de partición GPT
+# gpart create -s gpt /dev/ada3
+
+2.1. Verificar que todo esté correcto:
+# gpart show ada3
+
+-- Salida esperada:
+Código:
+
+ada3 GPT (512G)
+- free - (512G)
+
+3. Añadir una nueva partición al esquema de partición:
+# gpart add -t freebsd-ufs -a 1M /dev/ada3
+
+-- Notas:
+-t tipo de partición (freebsd-ufs)
+-a alineación (a un múltiplo de 1MB)
+
+4. Formatear la partición:
+# newfs -U /dev/ada3p1
+
+-- Nota:
+-U (habilita las actualizaciones suaves)
+
+5. Crear un punto de montaje, por ejemplo **/backup**
+# mkdir /backup
+
+6. Añadir la nueva partición al archivo `/etc/fstab`
+# vi /etc/fstab
+
+7. Añadir esta línea en el archivo `/etc/fstab`:
+Código:
+
+/dev/ada3p1    /backup        ufs    rw    2    2
+
+8. Montar la partición manualmente:
+# mount /backup
+
+9. ¡Listo!
+
+Fuente:
+https://forums.freebsd.org/threads/create-ufs-system-for-backups.81275/
