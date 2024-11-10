@@ -1,0 +1,17 @@
+El archivo .bashrc es el original de gentoo.
+
+CAMBIAR LA SHELL
+
+# Instalar Bash (si aún no está instalado)
+sudo pkg install bash
+
+# Asegurarte de que /usr/local/bin/bash esté en /etc/shells
+echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+
+# Cambiar la shell predeterminada a Bash
+chsh -s /usr/local/bin/bash
+
+# Cerrar sesión y volver a iniciar sesión para aplicar el cambio
+
+# Verificar que la shell se ha cambiado correctamente
+echo $SHELL

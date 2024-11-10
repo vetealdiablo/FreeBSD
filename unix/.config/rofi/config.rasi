@@ -1,0 +1,85 @@
+configuration {
+    modi: "drun";
+    width: 40;
+    columns: 1;
+    lines: 5;
+    font: "Iosevka 12";
+    show-icons: true;
+    icon-theme: "Oranchelo";
+    terminal: "st";
+    drun-display-format: "{icon} {name}";
+    display-drun: "  ";
+    location: 0;
+    separator-style: "solid";
+    disable-history: false;
+    hide-scrollbar: true;
+}
+
+* {
+    background-color: #fff;  /* Fondo gris claro (similar al fondo neutro de FreeBSD) */
+    border-color: #AB2B28;  /* Rojo para los bordes, similar al azul FreeBSD */
+    text-color: #444;  /* blanco para el texto, con buen contraste */
+    separator-color: @border-color;
+    font: "Iosevka 12";
+    show-icons: true;
+}
+
+window {
+    padding: 20px;
+    height: 320px;
+    border: 3px;
+    border-color: #AB2B28;  /* rojo para los bordes de la ventana */
+}
+
+mainbox {
+    padding: 5px;
+    border-radius: 13px;
+}
+
+inputbar {
+    children: [prompt, entry];
+}
+
+prompt {
+    background-color: #AB2B28;  /* rojo fuerte para el prompt */
+    padding: 5px 5px 0px;
+    text-color: #fff;  /* Blanco para el texto del prompt */
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 5px;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    columns: 2;
+}
+
+element {
+    padding: 5px;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color: #FFE6E6;  /* Rojo suave para selección, evocando el color de FreeBSD */
+    text-color: #fff;  /* Blanco para el texto en el elemento seleccionado */
+}
+
+element urgent {
+    background-color: #AB2B28;  /* Rojo oscuro para elementos urgentes */
+    text-color: #fff;  /* Blanco para el texto urgente */
+}
+
+element active {
+    background-color: #0645AD;  /* Azul para elementos activos */
+    text-color: #fff;  /* Blanco para texto activo */
+}
