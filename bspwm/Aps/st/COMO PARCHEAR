@@ -1,0 +1,23 @@
+# 1. Instalar la herramienta patch si no la tienes instalada
+sudo pkg install patch
+
+# 2. Clonar el repositorio de st (si no lo has hecho previamente)
+git clone https://git.suckless.org/st
+cd st
+
+# 3. Descargar o colocar el parche en el directorio de st
+# (asegúrate de que el archivo st-rightclickpaste-0.8.2.diff esté en el mismo directorio que el código fuente de st)
+
+# 4. Aplicar el parche
+patch -p1 < /ruta/al/parche/st-rightclickpaste-0.8.2.diff
+
+# 5. Verificar si el parche se aplicó correctamente
+# (Si todo fue bien, verás mensajes de "patching file <archivo>")
+
+# 6. Compilar st con el parche aplicado
+make
+
+# 7. Instalar la nueva versión de st
+sudo make install
+
+# 8. Verificar la funcionalidad de pegar con el clic derecho en st
