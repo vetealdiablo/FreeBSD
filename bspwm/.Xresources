@@ -1,81 +1,67 @@
-! Copyright (c) 2016-present Sven Greb <development@svengreb.de>
-! This source code is licensed under the MIT license found in the license file.
+! --- CONFIGURACIÓN DE FUENTES Y ANTIALIASING ---
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+! --- CONFIGURACIÓN DE BORDES DE XTerm ---
+XTerm.borderWidth: 10
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
-*fading: 35
-*fadeColor: nord3
+! --- CONFIGURACIÓN DE BORDES DE URxvt ---
+URxvt.internalBorder: 10
+URxvt.externalBorder: 10
+URxvt.padding: 10
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+! --- COLORES GENERALES ---
+*background: #444       
+*foreground: #FFF       
 
-!-- TIPOGRAFÍAS -- !
-URxvt.font: xft:JetBrainsMono Nerd Font:style=medium:pixelsize=14
-XTerm*faceName: Terminess Nerd Font Propo:style=regular:pixelsize=14
+! --- PALETA DE COLORES CLÁSICOS FREEBSD ---
+*color0: #000            
+*color1: #AB2B28         
+*color2: #43B929       
+*color3: #F1BB16         
+*color4: #0645AD         
+*color5: #BF6900         
+*color6: #19407C         
+*color7: #F0F1F5         
+*color8: #6272A4        
+*color9: #FF6E6E         
+*color10: #69FF94        
+*color11: #FEF8E7        
+*color12: #F4F4F4        
+*color13: #EAF1FB        
+*color14: #BF3400        
+*color15: #FFF4E6        
 
-!-- FUENTES ADICIONALES (COMENTADAS) -- !
+! --- CONFIGURACIÓN DE FUENTES (COMENTADAS) ---
+! Para usar estas fuentes, descomenta la línea correspondiente y aplica con `xrdb -merge ~/.Xresources
+! pixelsize: pixelsize define el tamaño de la fuente en píxeles absolutos.
+! size: size define el tamaño de la fuente en puntos (pt), que es una medida relativa a la resolución de la pantalla.
 
-! Para usar estas fuentes en todas las aplicaciones, descomenta la línea correspondiente y aplica con `xrdb -merge ~/.Xresources`
-! *.font: xft:Mononoki Nerd Font Mono:style=Regular:pixelsize=14
-! *.font: xft:Mononoki Nerd Font Mono:size=14
-! *.font: xft:Mononoki Nerd Font:style=Regular:pixelsize=14
-! *.font: xft:Mononoki Nerd Font:style=Bold:pixelsize=14
-! *.font: xft:SauceCodePro NF Black:size=14
-! *.font: xft:SauceCodePro NF:style=Regular:pixelsize=14
-! *.font: xft:Hack Nerd Font:style=Regular:pixelsize=14
-! *.font: xft:Hack Nerd Font:style=Bold:pixelsize=14
-! *.font: xft:NotoSans NF:style=Regular:pixelsize=14
-! *.font: xft:NotoSans NF:style=Bold:pixelsize=14
-! *.font: xft:IosevkaTerm Nerd Font:style=medium:pixelsize=14
-! *.font: xft:JetBrainsMono Nerd Font:style=medium:pixelsize=14
+! *.font: xft:Mononoki Nerd Font Mono::pixelsize=14
+! *.font: xft:Mononoki Nerd Font Mono:pixelsize=14
+! *.font: xft:Mononoki Nerd Font:pixelsize=14
+! *.font: xft:Mononoki Nerd Font:pixelsize=14
+! *.font: xft:SauceCodePro NF Black:pixelsize=14
+! *.font: xft:SauceCodePro NF:pixelsize=14
+! *.font: xft:Hack Nerd Font:pixelsize=14
+! *.font: xft:Hack Nerd Font:pixelsize=14
+! *.font: xft:NotoSans NF:pixelsize=14
+! *.font: xft:NotoSans NF:pixelsize=14
+! *.font: xft:Iosevka NF:pixelsize=14
+! *.font: xft:JetBrainsMonoNL NF:pixelsize=14
+! *.font: xft:JetBrainsMono NF:pixelsize=14
+! *.font: xft:BitstromWera Nerd Font:pixelsize=14
+! *.font: xft:BitstromWera Nerd Font Mono:pixelsize=14
+! *.font: xft:FiraCode Nerd Font:pixelsize=14
 
+! --- CONFIGURACIONES DE URxvt ---
+URxvt.depth: 32
+URxvt*scrollBar: false
+URxvt*mouseWheelScrollPage: false
+URxvt*cursorBlink: true
+URxvt*saveLines: 5000
 
-
-!-- ST -- !
-st.opacity:        255
-st.borderpx:          15
-st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=15 
-
-
-Xft.antialias:	1
-Xft.hinting:	1
-Xft.autohint:	0
-Xft.hintstyle:	hintslight
-Xft.rgba:	rgb
-Xft.lcdfilter:	lcddefault
-
-
-URxvt.internalBorder: 15
-XTerm*internalBorder: 15
