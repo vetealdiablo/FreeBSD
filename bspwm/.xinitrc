@@ -28,7 +28,7 @@ polybar &
 xsetroot -cursor_name left_ptr &
 
 # Iniciar sxhdk
-sxhdk &
+sxhkd &
 
 # Iniciar bspwm como gestor de ventanas
 exec bspwm
