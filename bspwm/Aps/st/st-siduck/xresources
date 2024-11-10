@@ -1,0 +1,50 @@
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+
+st.font:         xft:BitstromWera Nerd Font:pixelsize=14
+
+! window padding
+st.borderpx: 20
+
+!- 0.1 to 0.9 = transparency
+st.alpha: 1.0
+
+*background: #272822       
+*foreground: #f8f8f2
+
+! Black + DarkGrey
+*color0:  #000000
+*color8:  #272822
+
+! DarkRed + Red
+*color1:  #AB2B28
+*color9:  #FF6E6E
+
+! DarkGreen + Green
+*color2:  #a6e22e
+*color10: #D0F58B
+
+! DarkYellow + Yellow
+*color3:  #F1BB16
+*color11: #F9E18A
+
+! DarkBlue + Blue
+*color4:  #ae81ff
+*color12: #E1BFFF
+
+! DarkMagenta + Magenta
+*color5:  #ed3ea3
+*color13: #FF79C6
+
+! DarkCyan + Cyan
+*color6:  #4169e1
+*color14: #7998ff
+
+! LightGrey + White
+*color7:  #f8f8f2
+*color15: #FFFFFF
+
