@@ -33,18 +33,18 @@ st.opacity: 255
 ! *color2: #43B929
 *color2: #a6e22e       
 *color3: #F1BB16         
-*color4: #ae81ff         
+*color4: #4169e1      
 *color5: #ed3ea3         
-*color6: ##4169e1      
+*color6: #ae81ff      
 *color7: #f8f8f2
          
 *color8: #272822       
 *color9: #FF6E6E         
 *color10: #D0F58B        
 *color11: #F9E18A        
-*color12: #E1BFFF        
-*color13: ##FF79C6        
-*color14: 7998ff        
+*color12: #7998ff        
+*color13: #FF79C6        
+*color14: #E1BFFF        
 *color15: #FFF        
 
 ! --- CONFIGURACIÓN DE FUENTES ---
