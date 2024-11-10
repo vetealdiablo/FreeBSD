@@ -33,16 +33,16 @@ st.alpha: 1.0
 *color11: #F9E18A
 
 ! DarkBlue + Blue
-*color4:  #ae81ff
-*color12: #E1BFFF
+*color4: #4169e1 
+*color12: #7998ff
 
 ! DarkMagenta + Magenta
 *color5:  #ed3ea3
 *color13: #FF79C6
 
 ! DarkCyan + Cyan
-*color6:  #4169e1
-*color14: #7998ff
+*color6: #ae81ff
+*color14: #E1BFFF
 
 ! LightGrey + White
 *color7:  #f8f8f2
