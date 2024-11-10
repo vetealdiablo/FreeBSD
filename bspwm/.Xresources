@@ -14,29 +14,40 @@ URxvt.internalBorder: 10
 URxvt.externalBorder: 10
 URxvt.padding: 10
 
+! --- CONFIGURACIÓN DE BORDES DE ST ---
+st.borderpx: 10
+st.font: BitstromWera Nerd Font:pixelsize=14
+st.opacity: 255
+
+
 ! --- COLORES GENERALES ---
-*background: #444       
-*foreground: #FFF       
+! *background: #444
+! *foreground: #FFF
+
+*background: #272822       
+*foreground: #f8f8f2       
 
 ! --- PALETA DE COLORES CLÁSICOS FREEBSD ---
 *color0: #000            
 *color1: #AB2B28         
-*color2: #43B929       
+! *color2: #43B929
+*color2: #a6e22e       
 *color3: #F1BB16         
-*color4: #0645AD         
-*color5: #BF6900         
-*color6: #19407C         
-*color7: #F0F1F5         
-*color8: #6272A4        
+*color4: #ae81ff         
+*color5: #ed3ea3         
+*color6: ##4169e1      
+*color7: #f8f8f2
+         
+*color8: #272822       
 *color9: #FF6E6E         
-*color10: #69FF94        
-*color11: #FEF8E7        
-*color12: #F4F4F4        
-*color13: #EAF1FB        
-*color14: #BF3400        
-*color15: #FFF4E6        
+*color10: #D0F58B        
+*color11: #F9E18A        
+*color12: #E1BFFF        
+*color13: ##FF79C6        
+*color14: 7998ff        
+*color15: #FFF        
 
-! --- CONFIGURACIÓN DE FUENTES (COMENTADAS) ---
+! --- CONFIGURACIÓN DE FUENTES ---
 ! Para usar estas fuentes, descomenta la línea correspondiente y aplica con `xrdb -merge ~/.Xresources
 ! pixelsize: pixelsize define el tamaño de la fuente en píxeles absolutos.
 ! size: size define el tamaño de la fuente en puntos (pt), que es una medida relativa a la resolución de la pantalla.
@@ -54,9 +65,10 @@ URxvt.padding: 10
 ! *.font: xft:Iosevka NF:pixelsize=14
 ! *.font: xft:JetBrainsMonoNL NF:pixelsize=14
 ! *.font: xft:JetBrainsMono NF:pixelsize=14
-! *.font: xft:BitstromWera Nerd Font:pixelsize=14
+  *.font: xft:BitstromWera Nerd Font:pixelsize=14
 ! *.font: xft:BitstromWera Nerd Font Mono:pixelsize=14
 ! *.font: xft:FiraCode Nerd Font:pixelsize=14
+! *.font: xft:DejaVuSansM Nerd Font:pixelsize=14
 
 ! --- CONFIGURACIONES DE URxvt ---
 URxvt.depth: 32
