@@ -102,7 +102,7 @@ done
 ## Aplicaciones siempre flotantes --------------------------------#
 
 # Declaración de aplicaciones flotantes
-declare -a floating_apps=(alacritty-float Pcmanfm Thunar Onboard Yad 'Firefox:Places' Viewnior feh vlc URxvt St st Nm-connection-editor)
+declare -a floating_apps=(alacritty-float Pcmanfm Thunar Onboard Yad Viewnior feh vlc URxvt St st Nm-connection-editor)
 for app in "${floating_apps[@]}"; do
     bspc rule -a "$app" state=floating follow=on focus=on
 done
