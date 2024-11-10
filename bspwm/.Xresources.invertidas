@@ -1,0 +1,82 @@
+! --- CONFIGURACIÓN DE FUENTES Y ANTIALIASING ---
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+
+XTerm*faceName: BitstromWera Nerd Font
+XTerm*faceSize: 14
+
+
+! --- CONFIGURACIÓN DE BORDES DE URxvt ---
+URxvt.internalBorder: 10
+URxvt.externalBorder: 10
+URxvt.padding: 10
+
+! --- CONFIGURACIÓN DE BORDES DE ST ---
+st.borderpx: 10
+st.font: BitstromWera Nerd Font:pixelsize=14
+st.opacity: 255
+
+
+! --- COLORES GENERALES ---
+! *background: #444
+! *foreground: #FFF
+
+*background: #272822       
+*foreground: #f8f8f2       
+
+! --- PALETA DE COLORES CLÁSICOS FREEBSD ---
+*color0: #272822
+*color1: #FF6E6E
+*color2: #D0F58B
+*color3: #F9E18A
+*color4: #7998ff
+*color5: #FF79C6
+*color6: #E1BFFF
+*color7: #FFF
+
+*color8: #000
+*color9: #AB2B28
+*color10: #a6e22e
+*color11: #F1BB16
+*color12: #4169e1
+*color13: #ed3ea3
+*color14: #ae81ff
+*color15: #f8f8f2
+
+      
+
+! --- CONFIGURACIÓN DE FUENTES ---
+! Para usar estas fuentes, descomenta la línea correspondiente y aplica con `xrdb -merge ~/.Xresources
+! pixelsize: pixelsize define el tamaño de la fuente en píxeles absolutos.
+! size: size define el tamaño de la fuente en puntos (pt), que es una medida relativa a la resolución de la pantalla.
+
+! *.font: xft:Mononoki Nerd Font Mono::pixelsize=14
+! *.font: xft:Mononoki Nerd Font Mono:pixelsize=14
+! *.font: xft:Mononoki Nerd Font:pixelsize=14
+! *.font: xft:Mononoki Nerd Font:pixelsize=14
+! *.font: xft:SauceCodePro NF Black:pixelsize=14
+! *.font: xft:SauceCodePro NF:pixelsize=14
+! *.font: xft:Hack Nerd Font:pixelsize=14
+! *.font: xft:Hack Nerd Font:pixelsize=14
+! *.font: xft:NotoSans NF:pixelsize=14
+! *.font: xft:NotoSans NF:pixelsize=14
+! *.font: xft:Iosevka NF:pixelsize=14
+! *.font: xft:JetBrainsMonoNL NF:pixelsize=14
+! *.font: xft:JetBrainsMono NF:pixelsize=14
+URxvt.font: xft:JetBrainsMono NF:pixelsize=14
+! *.font: xft:BitstromWera Nerd Font Mono:pixelsize=14
+! *.font: xft:FiraCode Nerd Font:pixelsize=14
+! *.font: xft:DejaVuSansM Nerd Font:pixelsize=14
+
+! --- CONFIGURACIONES DE URxvt ---
+URxvt.depth: 32
+URxvt*scrollBar: false
+URxvt*mouseWheelScrollPage: false
+URxvt*cursorBlink: true
+URxvt*saveLines: 5000
+
