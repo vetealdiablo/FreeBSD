@@ -16,9 +16,9 @@ configuration {
 }
 
 * {
-    background-color: #F0F1F5;  /* Fondo gris claro (similar al fondo neutro de FreeBSD) */
-    border-color: #0645AD;  /* Azul para los bordes, similar al azul FreeBSD */
-    text-color: #444;  /* Gris oscuro para el texto, con buen contraste */
+    background-color: #fff;  /* Fondo gris claro (similar al fondo neutro de FreeBSD) */
+    border-color: #AB2B28;  /* Rojo para los bordes, similar al azul FreeBSD */
+    text-color: #444;  /* blanco para el texto, con buen contraste */
     separator-color: @border-color;
     font: "Iosevka 12";
     show-icons: true;
@@ -28,7 +28,7 @@ window {
     padding: 20px;
     height: 320px;
     border: 3px;
-    border-color: #0645AD;  /* Azul para los bordes de la ventana */
+    border-color: #AB2B28;  /* rojo para los bordes de la ventana */
 }
 
 mainbox {
@@ -41,7 +41,7 @@ inputbar {
 }
 
 prompt {
-    background-color: #0645AD;  /* Azul fuerte para el prompt */
+    background-color: #AB2B28;  /* rojo fuerte para el prompt */
     padding: 5px 5px 0px;
     text-color: #fff;  /* Blanco para el texto del prompt */
 }
@@ -70,7 +70,7 @@ element-icon {
 }
 
 element selected {
-    background-color: #AB2B28;  /* Rojo oscuro para selección, evocando el color de FreeBSD */
+    background-color: #FFE6E6;  /* Rojo suave para selección, evocando el color de FreeBSD */
     text-color: #fff;  /* Blanco para el texto en el elemento seleccionado */
 }
 
