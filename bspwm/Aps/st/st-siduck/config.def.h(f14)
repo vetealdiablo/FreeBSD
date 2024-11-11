@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 // Cambia la fuente principal
-static char *font = "Mononoki Nerd Font Mono:pixelsize=15:antialias=true:autohint=true";
+static char *font = "Mononoki Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
 
 // Lista de fuentes alternativas
 static char *font2[] = {
