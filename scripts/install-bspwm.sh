@@ -67,6 +67,12 @@ EOF
 # Confirmación de creación en rojo claro
 echo "Archivo de configuración creado correctamente: /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf"
 
+# Copia login.conf
+cp /etc/login.conf /etc/login.conf.backup
+cp FreeBSD/locales/login.conf /etc/
+
+# Reconstrucción de la base de datos de capacidades
+cap_mkdb /etc/login.conf
 
 # ==========================================
 # Mensaje Final
