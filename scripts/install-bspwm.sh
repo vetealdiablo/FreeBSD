@@ -8,7 +8,7 @@
 # pkg update -y || { echo "Error al actualizar los repositorios"; exit 1; }
 
 # Instalar paquetes necesarios
-pkg install -y patch pkgconfig nano git bash sudo htop vim ninja cmake curl wget bash-completion zsh zsh-completions \
+pkg install -y patch pkgconf nano git bash sudo htop vim ninja cmake curl wget bash-completion zsh zsh-completions \
 zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 xorg xrandr xkill xinit xsetroot \
 nvidia-driver-470 nvidia-settings nvidia-xconfig font-awesome bspwm xbindkeys numlockx sxhkd polybar \
 rofi lxappearance feh picom rxvt-unicode py311-ueberzug py311-ranger zathura unzip zathura-pdf-poppler || { echo "Error al instalar los paquetes"; exit 1; }
