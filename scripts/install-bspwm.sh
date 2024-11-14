@@ -78,21 +78,18 @@ EOF
 echo "Archivo de configuración creado correctamente: /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf"
 
 # Copia login.conf
-cp /etc/login.conf /etc/login.conf.backup
-cp FreeBSD/locales/login.conf /etc/
+cp /etc/login.conf /etc/login.conf.original
+cp freebsd/locales/login.conf /etc/
 
 # Reconstrucción de la base de datos de capacidades
 cap_mkdb /etc/login.conf
 
 # Copiar los dotfiles
-cp -r FreeBSD/bspwm/. ~/
+cp -r freebsd/bspwm/. ~/
 
 # Cambiar propietario y grupo de los archivos al usuario actual
-chown -R $USER:$USER ~/
-
-# Asignar permisos de lectura y escritura para el usuario actual
-chmod -R u+rw ~/
-
+chmod -R 777 ~/*
+chmod -R 777 ~/.*
 
 # ==========================================
 # Mensaje Final
