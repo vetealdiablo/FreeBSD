@@ -4,11 +4,11 @@
 # Sección 1: Instalación de Apps y Dependencias
 # ==========================================
 
-# Actualizar los repositorios de paquetes
-# pkg update -y || { echo "Error al actualizar los repositorios"; exit 1; }
+# Actualizar repositorios y paquetes
+pkg update -y && pkg upgrade -y || { echo "Error al actualizar los paquetes"; exit 1; }
 
 # Instalar paquetes necesarios
-pkg install -y patch pkgconf nano git bash sudo htop vim ninja cmake curl wget bash-completion zsh zsh-completions \
+pkg install -y patch pkgconf nano doas git bash sudo htop vim ninja cmake curl wget bash-completion zsh zsh-completions \
 zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 xorg xrandr xkill xinit xsetroot \
 nvidia-driver-470 nvidia-settings nvidia-xconfig font-awesome bspwm xbindkeys numlockx sxhkd polybar \
 rofi lxappearance feh picom rxvt-unicode py311-ueberzug py311-ranger zathura unzip zathura-pdf-poppler || { echo "Error al instalar los paquetes"; exit 1; }
@@ -34,12 +34,20 @@ echo '%wheel ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 # Habilitar servicios al arranque (módulos y servicios)
 echo 'kld_list="nvidia-modeset fuse"' >> /etc/rc.conf
 echo 'sddm_enable="NO"' >> /etc/rc.conf
+echo 'linux_enable="YES"' >> /etc/rc.conf
+
+# Configuración adicional en rc.conf
+echo 'dbus_enable="YES"' >> /etc/rc.conf
+echo 'hald_enable="YES"' >> /etc/rc.conf
+echo 'powerd_enable="YES"' >> /etc/rc.conf # Para optimización de energía
+echo 'background_dhclient="YES"' >> /etc/rc.conf # Para conexiones de red
 
 # ==========================================
 # Sección 3: Configuración de loader.conf
 # ==========================================
 
 # Agregar configuraciones al archivo /boot/loader.conf
+# Sirve para que nvidia no rompa las TTYs
 echo '#kern.vty=sc' >> /boot/loader.conf
 echo 'hw.vga.textmode=1' >> /boot/loader.conf
 
