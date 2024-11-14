@@ -5,7 +5,7 @@
 # ==========================================
 
 # Actualizar repositorios y paquetes
-pkg update -y && pkg upgrade -y || { echo "Error al actualizar los paquetes"; exit 1; }
+# pkg update -y && pkg upgrade -y || { echo "Error al actualizar los paquetes"; exit 1; }
 
 # Instalar paquetes necesarios
 pkg install -y patch pkgconf nano doas git bash sudo htop vim ninja cmake curl wget bash-completion zsh zsh-completions \
@@ -81,6 +81,16 @@ cp FreeBSD/locales/login.conf /etc/
 
 # Reconstrucción de la base de datos de capacidades
 cap_mkdb /etc/login.conf
+
+# Copiar los dotfiles
+cp -r FreeBSD/bspwm/. ~/
+
+# Cambiar propietario y grupo de los archivos al usuario actual
+chown -R $USER:$USER ~/
+
+# Asignar permisos de lectura y escritura para el usuario actual
+chmod -R u+rw ~/
+
 
 # ==========================================
 # Mensaje Final
