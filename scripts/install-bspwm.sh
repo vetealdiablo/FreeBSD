@@ -31,6 +31,8 @@ kldload fusefs || { echo "Error al cargar el módulo FUSE"; exit 1; }
 echo 'diablo ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 echo '%wheel ALL=(ALL) ALL' >> /usr/local/etc/sudoers
 
+cp FreeBSD/configs/sudoers/sudoers /usr/local/etc/sudoers
+
 # Habilitar servicios al arranque (módulos y servicios)
 echo 'kld_list="nvidia-modeset fuse"' >> /etc/rc.conf
 echo 'sddm_enable="NO"' >> /etc/rc.conf
