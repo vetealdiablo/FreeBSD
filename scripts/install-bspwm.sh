@@ -1,17 +1,28 @@
 #!/bin/sh
-
+#
+# FreeBSD 5 Minute Desktop bspwm Build
+#
+# Version: 1.1
+#
 # ==========================================
 # Sección 1: Instalación de Apps y Dependencias
 # ==========================================
 
 # Actualizar repositorios y paquetes
-# pkg update -y && pkg upgrade -y || { echo "Error al actualizar los paquetes"; exit 1; }
+#pkgng needs to be bootstrapped. 
+env ASSUME_ALWAYS_YES=YES pkg bootstrap
+
+#Update Packages
+env ASSUME_ALWAYS_YES=YES pkg update -f
 
 # Instalar paquetes necesarios
 pkg install -y patch pkgconf nano doas git bash sudo htop vim ninja cmake curl wget bash-completion zsh zsh-completions \
 zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 xorg xrandr xkill xinit xsetroot \
 nvidia-driver-470 nvidia-settings nvidia-xconfig font-awesome bspwm xbindkeys numlockx sxhkd polybar \
 rofi lxappearance feh picom rxvt-unicode py311-ueberzug py311-ranger zathura unzip zathura-pdf-poppler || { echo "Error al instalar los paquetes"; exit 1; }
+
+#Install everything
+pkg install -y xterm xauth xscreensaver xf86-input-keyboard xf86-input-mouse firefox www/linux-chrome
 
 # Configurar el driver de NVIDIA
 nvidia-xconfig
@@ -27,16 +38,14 @@ echo "Instalación completada y configuración de NVIDIA aplicada."
 # Cargar el módulo FUSE para sistemas de archivos
 kldload fusefs || { echo "Error al cargar el módulo FUSE"; exit 1; }
 
-# Configuración del sudoers para el usuario 'diablo' y el grupo 'wheel'
-echo 'diablo ALL=(ALL) ALL' >> /usr/local/etc/sudoers
-echo '%wheel ALL=(ALL) ALL' >> /usr/local/etc/sudoers
-
-cp FreeBSD/configs/sudoers/sudoers /usr/local/etc/sudoers
-
 # Habilitar servicios al arranque (módulos y servicios)
 echo 'kld_list="nvidia-modeset fuse"' >> /etc/rc.conf
 echo 'sddm_enable="NO"' >> /etc/rc.conf
-echo 'linux_enable="YES"' >> /etc/rc.conf
+
+#necessary for linux compat and chrome/firefox
+echo 'sem_load="YES"' >> /boot/loader.conf
+echo 'linux_load="YES"' >> /boot/loader.conf
+
 
 # Configuración adicional en rc.conf
 echo 'dbus_enable="YES"' >> /etc/rc.conf
@@ -52,6 +61,15 @@ echo 'background_dhclient="YES"' >> /etc/rc.conf # Para conexiones de red
 # Sirve para que nvidia no rompa las TTYs
 echo '#kern.vty=sc' >> /boot/loader.conf
 echo 'hw.vga.textmode=1' >> /boot/loader.conf
+
+
+#sysctl values for chromium,audio and disabling CTRL+ALT+DELETE
+cat << EOF >> /etc/sysctl.conf
+#Required for chrome
+kern.ipc.shm_allow_removed=1
+#Don't allow CTRL+ALT+DELETE
+hw.syscons.kbd_reboot=0
+EOF
 
 # ==========================================
 # Sección 4: Configuración de idioma
