@@ -22,7 +22,7 @@ nvidia-driver-470 nvidia-settings nvidia-xconfig font-awesome bspwm xbindkeys nu
 rofi lxappearance feh picom rxvt-unicode xdg-utils py311-ueberzug py311-ranger zathura unzip zathura-pdf-poppler || { echo "Error al instalar los paquetes"; exit 1; }
 
 #Install everything
-pkg install -y xterm xauth xscreensaver xf86-input-keyboard xf86-input-mouse firefox www/linux-chrome
+pkg install -y xterm xauth xscreensaver xf86-input-keyboard xf86-input-mouse firefox www/linux-chrome catclock
 
 # Configurar el driver de NVIDIA
 nvidia-xconfig
