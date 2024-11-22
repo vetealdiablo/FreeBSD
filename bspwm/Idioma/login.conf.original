@@ -48,7 +48,7 @@ default:\
 	:ignoretime@:\
 	:umask=022:\
 	:charset=UTF-8:\
-	:lang=es_ES.UTF-8:
+	:lang=C.UTF-8:
 
 #
 # A collection of common class names - forward them all to 'default'

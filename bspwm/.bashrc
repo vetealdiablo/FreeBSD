@@ -115,3 +115,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+# IDIOMA
+export LANG=es_ES.UTF-8
+export LC_ALL=es_ES.UTF-8
+
