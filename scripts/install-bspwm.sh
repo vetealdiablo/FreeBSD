@@ -19,7 +19,7 @@ env ASSUME_ALWAYS_YES=YES pkg update -f
 pkg install -y patch pkgconf nano doas git bash sudo htop vim ninja cmake curl wget bash-completion zsh zsh-completions \
 zsh-syntax-highlighting zsh-autosuggestions fusefs-ntfs fusefs-ext2 xorg xrandr xkill xinit xsetroot \
 nvidia-driver-470 nvidia-settings nvidia-xconfig font-awesome bspwm xbindkeys numlockx sxhkd polybar \
-rofi lxappearance feh picom rxvt-unicode xdg-utils py311-ueberzug py311-ranger zathura unzip zathura-pdf-poppler || { echo "Error al instalar los paquetes"; exit 1; }
+rofi lxappearance feh picom xprop rxvt-unicode xdg-utils py311-ueberzug py311-ranger zathura unzip zathura-pdf-poppler || { echo "Error al instalar los paquetes"; exit 1; }
 
 #Install everything
 pkg install -y xterm xscreensaver xf86-input-keyboard xf86-input-mouse firefox www/linux-chrome catclock mousepad cowsay

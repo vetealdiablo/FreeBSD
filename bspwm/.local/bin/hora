@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Obtener la hora y fecha en el formato deseado
+TIME=$(date '+%A, %I:%M %p')
+
+# Símbolo o icono a mostrar (esto dependerá del entorno o si tienes un conjunto de iconos Unicode)
+SYMBOL="󱑆"
+
+# Imprimir la información sin colores
+echo "$SYMBOL $TIME"
