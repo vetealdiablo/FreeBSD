@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Directorio donde buscar los archivos .sh (tu home)
 DIR="$HOME"
@@ -6,6 +6,7 @@ DIR="$HOME"
 # Buscar archivos .sh y otorgar permisos de ejecución
 echo "Buscando archivos .sh en $DIR ..."
 find "$DIR" -type f -name "*.sh" | while read -r file; do
+    # Verificar si el archivo ya tiene permisos de ejecución
     if [ -x "$file" ]; then
         echo "El archivo '$file' ya tiene permisos de ejecución."
     else

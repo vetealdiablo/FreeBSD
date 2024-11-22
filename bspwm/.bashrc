@@ -117,7 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 
-# IDIOMA
+# Configurar idioma a español
 export LANG=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8
 
+# Agregar directorios de Scripts y Binarios al PATH
+export PATH=$PATH:$HOME/Scripts:$HOME/.local/bin

@@ -42,7 +42,9 @@ if ($?prompt) then
 endif
 
 
-# IDIOMA
+# Configurar idioma a español
 export LANG=es_ES.UTF-8
 export LC_ALL=es_ES.UTF-8
 
+#Scripts
+set path = ($path $HOME/Scripts $HOME/.local/bin)

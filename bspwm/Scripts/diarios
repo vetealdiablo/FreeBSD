@@ -1,0 +1,129 @@
+#!/bin/sh
+
+# Función para abrir un sitio web en una nueva pestaña de Chrome
+abrir_sitio_chrome() {
+    google-chrome --new-tab "$1" &
+}
+
+# Función para abrir un sitio web en una nueva pestaña de Firefox
+abrir_sitio_firefox() {
+    firefox --new-tab "$1" &
+}
+
+# Función para verificar si xdg-open está disponible
+verificar_dependencia() {
+    if ! command -v xdg-open &> /dev/null; then
+        echo "El comando 'xdg-open' no está disponible. Asegúrate de tenerlo instalado."
+        exit 1
+    fi
+}
+
+# Mostrar opciones de diarios con descripción
+mostrar_opciones() {
+    echo "¿Qué diario argentino quieres leer?"
+    echo "1. Clarín - Noticias generales"
+    echo "2. La Nación - Información política y económica"
+    echo "3. Página/12 - Noticias de izquierda"
+    echo "4. Infobae - Noticias de actualidad"
+    echo "5. Ámbito Financiero - Información financiera"
+    echo "6. El Cronista - Noticias económicas"
+    echo "7. TN (Todo Noticias) - Canal de noticias 24hs"
+    echo "8. 0221 - Noticias regionales de La Plata"
+    echo "9. El Día de La Plata - Noticias locales y nacionales"
+    echo "10. Abrir todos los diarios a la vez en pestañas"
+    echo "11. Salir"
+}
+
+# Leer si el usuario desea abrir más de un sitio
+leer_opciones() {
+    opciones_seleccionadas=""
+    while true; do
+        mostrar_opciones
+        read -p "Ingresa el número de tu elección (1-11) o '11' para salir: " opcion
+
+        case $opcion in
+            1)
+                echo "Abriendo Clarín..."
+                abrir_sitio_chrome "https://www.clarin.com"
+                opciones_seleccionadas="$opciones_seleccionadas Clarín"
+                ;;
+            2)
+                echo "Abriendo La Nación..."
+                abrir_sitio_chrome "https://www.lanacion.com.ar"
+                opciones_seleccionadas="$opciones_seleccionadas La Nación"
+                ;;
+            3)
+                echo "Abriendo Página/12..."
+                abrir_sitio_chrome "https://www.pagina12.com.ar"
+                opciones_seleccionadas="$opciones_seleccionadas Página/12"
+                ;;
+            4)
+                echo "Abriendo Infobae..."
+                abrir_sitio_chrome "https://www.infobae.com"
+                opciones_seleccionadas="$opciones_seleccionadas Infobae"
+                ;;
+            5)
+                echo "Abriendo Ámbito Financiero..."
+                abrir_sitio_chrome "https://www.ambito.com"
+                opciones_seleccionadas="$opciones_seleccionadas Ámbito Financiero"
+                ;;
+            6)
+                echo "Abriendo El Cronista..."
+                abrir_sitio_chrome "https://www.cronista.com"
+                opciones_seleccionadas="$opciones_seleccionadas El Cronista"
+                ;;
+            7)
+                echo "Abriendo TN..."
+                abrir_sitio_chrome "https://tn.com.ar"
+                opciones_seleccionadas="$opciones_seleccionadas TN"
+                ;;
+            8)
+                echo "Abriendo 0221..."
+                abrir_sitio_chrome "https://www.0221.com.ar"
+                opciones_seleccionadas="$opciones_seleccionadas 0221"
+                ;;
+            9)
+                echo "Abriendo El Día de La Plata..."
+                abrir_sitio_chrome "https://www.eldia.com"
+                opciones_seleccionadas="$opciones_seleccionadas El Día de La Plata"
+                ;;
+            10)
+                # Abrir todos los diarios a la vez en pestañas
+                echo "Abriendo todos los diarios a la vez en pestañas..."
+                abrir_sitio_chrome "https://www.clarin.com"
+                abrir_sitio_chrome "https://www.lanacion.com.ar"
+                abrir_sitio_chrome "https://www.pagina12.com.ar"
+                abrir_sitio_chrome "https://www.infobae.com"
+                abrir_sitio_chrome "https://www.ambito.com"
+                abrir_sitio_chrome "https://www.cronista.com"
+                abrir_sitio_chrome "https://tn.com.ar"
+                abrir_sitio_chrome "https://www.0221.com.ar"
+                abrir_sitio_chrome "https://www.eldia.com"
+                break
+                ;;
+            11)
+                echo "Saliendo..."
+                break
+                ;;
+            *)
+                echo "Opción no válida. Por favor elige un número entre 1 y 11."
+                ;;
+        esac
+
+        # Preguntar si el usuario quiere leer más diarios
+        read -p "¿Deseas leer otro diario? (s/n): " respuesta
+        if [ "$respuesta" != "s" ]; then
+            break
+        fi
+    done
+
+    if [ -n "$opciones_seleccionadas" ]; then
+        echo "Has abierto los siguientes diarios: $opciones_seleccionadas"
+    fi
+}
+
+# Verificar si xdg-open está disponible
+verificar_dependencia
+
+# Ejecutar el flujo principal
+leer_opciones

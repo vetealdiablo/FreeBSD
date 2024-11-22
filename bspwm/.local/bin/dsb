@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+# ufetch-freebsd - tiny system info for freebsd
+
+# Define colors using tput or fall back to defaults
+if command -v tput >/dev/null 2>&1; then
+    bold="$(tput bold)"
+    reset="$(tput sgr0)"
+    black="$(tput setaf 0)"
+    red="$(tput setaf 1)"
+    green="$(tput setaf 2)"
+    yellow="$(tput setaf 3)"
+    blue="$(tput setaf 4)"
+    magenta="$(tput setaf 5)"
+    cyan="$(tput setaf 6)"
+    white="$(tput setaf 7)"
+else
+    # Fallback colors in case tput is not available
+    bold=""
+    reset=""
+    black=""
+    red=""
+    green=""
+    yellow=""
+    blue=""
+    magenta=""
+    cyan=""
+    white=""
+fi
+
+# User and system info
+host="$(hostname)"
+os="$(uname -srm)"               # Using -r for kernel version and -m for machine architecture
+uptime="$(uptime -p | sed 's/up //')"  # Simple uptime formatting
+packages="$(pkg info | wc -l)"   # Get the number of installed packages
+shell="$(basename "${SHELL}")"
+
+# Detect the UI (DE/WM)
+detect_ui() {
+    # Check common environment variables first
+    if [ -n "${DE}" ]; then
+        echo "${DE}"  # Desktop Environment
+    elif [ -n "${WM}" ]; then
+        echo "${WM}"  # Window Manager
+    elif [ -n "${XDG_CURRENT_DESKTOP}" ]; then
+        echo "${XDG_CURRENT_DESKTOP}"  # XDG environment
+    elif [ -n "${DESKTOP_SESSION}" ]; then
+        echo "${DESKTOP_SESSION}"  # Desktop session
+    elif [ -f "${HOME}/.xinitrc" ] && [ -n "$(tail -n 1 "${HOME}/.xinitrc" 2>/dev/null)" ]; then
+        tail -n 1 "${HOME}/.xinitrc" | cut -d ' ' -f 2  # Custom window manager
+    elif [ -f "${HOME}/.xsession" ] && [ -n "$(tail -n 1 "${HOME}/.xsession" 2>/dev/null)" ]; then
+        tail -n 1 "${HOME}/.xsession" | cut -d ' ' -f 2  # Custom session file
+    else
+        echo "unknown"  # Default case when no UI is found
+    fi
+}
+
+ui=$(detect_ui)
+
+# Output formatting
+lc="${bold}${red}"               # Labels (bold and red)
+nc="${reset}${bold}${cyan}"      # User and hostname (cyan and bold)
+ic="${reset}"                    # Info color (reset)
+c0="${reset}${bold}${green}"     # First color (green)
+c1="${reset}${yellow}"           # Second color (yellow)
+
+# Output the system information
+cat <<EOF
+${c0}   _  ${c1}_____  ${c0}_   ${nc}${USER}${ic}@${nc}${host}${reset}
+${c0}  / \`     \`/ \\  ${lc}OS:        ${ic}${os}${reset}
+${c0}  \/       (__/  ${lc}UPTIME:    ${ic}${uptime}${reset}
+${c1}  |           |  ${lc}KERNEL:    ${ic}$(uname -r)${reset}
+${c1}  |           |  ${lc}ARCH:      ${ic}$(uname -m)${reset}
+${c1}   \         /   ${lc}PACKAGES:  ${ic}${packages}${reset}
+${c1}    \`-_____-\`    ${lc}SHELL:     ${ic}${shell}${reset}
+${c1}                   ${lc}${uitype}:   ${ic}${ui}${reset}
+EOF
